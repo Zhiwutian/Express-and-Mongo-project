@@ -48,9 +48,6 @@ const readFunFact = async (req, res) => {
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
@@ -77,18 +74,13 @@ const createFunFact = async (req, res) => {
   if(!state){
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if(state.length > 2){
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
 
   const funfacts = req?.body?.funfacts
-  console.log(typeof funfacts)
   if(!funfacts){
     return res.status(400).json({ 'message': 'State fun facts value required' });
-
   }
   if(!Array.isArray(funfacts)){
     return res.status(400).json({ 'message': 'State fun facts value must be an array' });
@@ -123,9 +115,6 @@ const updateFunFact = async (req, res) => {
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
@@ -134,7 +123,6 @@ const updateFunFact = async (req, res) => {
 
   if(!index){
     return res.status(400).json({ 'message': 'State fun fact index value required' });
-
   }
 
   if (index <= 0 || !Number.isInteger(index)){
@@ -167,9 +155,6 @@ const deleteFunFact = async (req, res) => {
   const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
-  }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });

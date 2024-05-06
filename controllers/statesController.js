@@ -67,9 +67,6 @@ const getStateData = async (req, res) => {
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
@@ -84,9 +81,6 @@ const getStateCapital = async (req, res) => {
   const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
-  }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
@@ -105,9 +99,6 @@ const getStateNickname = async (req, res) => {
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
@@ -125,9 +116,6 @@ const getStatePopulation = async (req, res) => {
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
-  }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
@@ -144,9 +132,6 @@ const getStateAdmitDate = async (req, res) => {
   const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
-  }
-  if (state.length > 2) {
-    return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
     return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });

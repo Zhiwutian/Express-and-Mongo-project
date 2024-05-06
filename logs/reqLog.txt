@@ -337,3 +337,9 @@
 20240506	18:56:15	c5399673-5ca6-43e5-996a-09da2904d1e8	GET	undefined	/states/Ks
 20240506	19:00:06	9f4c86b4-cbf8-4f09-9be1-0eda363afaec	GET	undefined	/states/Ks
 20240506	19:04:55	038dad36-9052-455d-b0ab-5375cd7f99ab	GET	undefined	/states/GA/funfact
+20240506	19:14:24	6a84b4ad-862f-4972-a0dc-74d82ff33e2b	GET	undefined	/
+20240506	19:14:24	c4183593-d11f-4026-97fc-7a084f4b67f2	GET	undefined	/css/style.css
+20240506	19:14:24	70b430cb-dc29-4fc4-b2f0-f6a52972bfb1	GET	undefined	/favicon.ico
+20240506	19:14:32	9aea4fc5-1b41-4613-b622-70915504def8	GET	undefined	/states/kjhe
+20240506	19:17:17	d97a2e20-d057-423a-9245-d858f7295984	GET	undefined	/states/GA/funfact
+20240506	19:18:00	29133e80-aac0-4edd-88ef-bd5173d1daa7	GET	undefined	/states/dafasdfadsf
