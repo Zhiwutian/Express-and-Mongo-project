@@ -63,7 +63,7 @@ const readFunFact = async (req, res) => {
       res.status(200).json({funfact:factsState.funfacts[randomFactIndex]});
     } else {
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
+      return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
     }
   } catch (err){
     console.log(err);
@@ -86,8 +86,12 @@ const createFunFact = async (req, res) => {
 
   const funfacts = req?.body?.funfacts
   console.log(typeof funfacts)
+  if(!funfacts){
+    return res.status(400).json({ 'message': 'State fun facts value required' });
+
+  }
   if(!Array.isArray(funfacts)){
-    return res.status(400).json({ 'message': 'funFacts must be in an array' });
+    return res.status(400).json({ 'message': 'State fun facts value must be an array' });
   }
   if (!funfacts.length) {
     return res.status(400).json({ 'message': 'At least one Fun Fact is required' });
@@ -128,6 +132,11 @@ const updateFunFact = async (req, res) => {
 
   const {funfact, index} = req?.body;
 
+  if(!index){
+    return res.status(400).json({ 'message': 'State fun fact index value required' });
+
+  }
+
   if (index <= 0 || !Number.isInteger(index)){
     return res.status(400).json({ 'message': 'index must be a positive integer value'});
   }
@@ -146,7 +155,7 @@ const updateFunFact = async (req, res) => {
       res.status(200).json(result);
     } else {
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
+      return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
     }
   } catch (err){
     console.error(err);
@@ -167,6 +176,10 @@ const deleteFunFact = async (req, res) => {
   }
 
   const { index } = req?.body;
+  if (!index) {
+    return res.status(400).json({ 'message': 'State fun fact index value required' });
+
+  }
 
   if (index <= 0 || !Number.isInteger(index)) {
     return res.status(400).json({ 'message': 'index must be a positive integer value' });
@@ -183,7 +196,7 @@ const deleteFunFact = async (req, res) => {
       res.status(200).json(result);
     } else {
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
+      return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
     }
   } catch (err) {
     console.error(err);
