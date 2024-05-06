@@ -3,7 +3,7 @@ const stateData = require('../model/statesData.json');
 
 const verifyStateCode = (code) => {
   for (const state of stateData) {
-    if (state.code === code) {
+    if (state.code === code.toUpperCase()) {
       return true;
     }
   }
@@ -71,7 +71,7 @@ const getStateData = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
   const allStateData = await buildStateData();
   const singleState = allStateData.filter((stateVal)=> stateVal.code === state)
