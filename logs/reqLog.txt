@@ -347,3 +347,8 @@
 20240506	19:22:08	4d449ee6-cc54-42b4-8945-212ceeb29b7e	GET	undefined	/states/NY/population
 20240506	19:25:43	fcd1192b-063d-4206-89a7-5c5798ef49bf	GET	undefined	/states/NY/population
 20240506	19:25:49	cd6f2824-5536-4448-a5d9-80a6701165aa	GET	undefined	/states/CA/population
+20240506	20:22:48	5949eb3e-5b0f-401a-8349-bcd35184f399	GET	undefined	/states/KS/funfact
+20240506	20:22:51	37b1ff51-93f4-40d8-bbeb-8d9054547633	GET	undefined	/states/KS/funfact
+20240506	20:22:51	eef61516-227a-4ad5-9cd2-8cbdd2d1f315	GET	undefined	/states/KS/funfact
+20240506	20:22:57	95f3b1da-9806-4676-8d95-ef4c70bcb0e7	GET	undefined	/states/Ks/funfact
+20240506	20:23:28	0a419fe0-bf91-4154-91ed-83e445c74cfe	GET	undefined	/states/Ks/funfact

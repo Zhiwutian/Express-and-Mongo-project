@@ -44,7 +44,7 @@ const generateRandomIndex = (min = 0, max) => {
 
 
 const readFunFact = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -143,7 +143,7 @@ const updateFunFact = async (req, res) => {
       res.status(200).json(result);
     } else {
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
+      return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
     }
   } catch (err){
     console.error(err);
@@ -181,7 +181,7 @@ const deleteFunFact = async (req, res) => {
       res.status(200).json(result);
     } else {
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
+      return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
     }
   } catch (err) {
     console.error(err);
