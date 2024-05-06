@@ -144,7 +144,6 @@ const updateFunFact = async (req, res) => {
     } else {
       const funFacts = await State.find({ stateCode: state });
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      console.log(funFacts)
       if (!funFacts.length) {
         return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
       }
