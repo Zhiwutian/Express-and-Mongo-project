@@ -3,7 +3,7 @@ const stateData = require('../model/statesData.json');
 
 const verifyStateCode = (code) => {
   for (const state of stateData) {
-    if (state.code === code.toUpperCase()) {
+    if (state.code === code) {
       return true;
     }
   }
@@ -63,7 +63,7 @@ const getAllStateData = async (req, res) => {
 }
 
 const getStateData = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -81,7 +81,7 @@ const getStateData = async (req, res) => {
 }
 
 const getStateCapital = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -89,7 +89,7 @@ const getStateCapital = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
   try {
     const allStateData = await buildStateData();
@@ -101,7 +101,7 @@ const getStateCapital = async (req, res) => {
 }
 
 const getStateNickname = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -109,7 +109,7 @@ const getStateNickname = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
   try {
     const allStateData = await buildStateData();
@@ -121,7 +121,7 @@ const getStateNickname = async (req, res) => {
 }
 
 const getStatePopulation = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -129,7 +129,7 @@ const getStatePopulation = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
   try {
     const allStateData = await buildStateData();
@@ -141,7 +141,7 @@ const getStatePopulation = async (req, res) => {
 }
 
 const getStateAdmitDate = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -149,7 +149,7 @@ const getStateAdmitDate = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
   try {
     const allStateData = await buildStateData();

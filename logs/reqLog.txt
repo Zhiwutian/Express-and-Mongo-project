@@ -327,3 +327,12 @@
 20240506	17:33:44	4adad81b-c1b7-4866-91a1-b6344f506946	POST	undefined	/states/OK/funfact
 20240506	17:38:48	b61e170d-6c25-478a-b031-438cdae8c8ec	POST	undefined	/states/NE/funfact
 20240506	17:40:53	47b9b1b3-e2c0-4bde-a2f6-ae1a8ffd5e10	POST	undefined	/states/CO/funfact
+20240506	18:51:46	d7e028a4-eea1-4e82-bb8c-dbe21d9ad8e0	GET	undefined	/states/KS
+20240506	18:51:52	159271b1-ebc9-45f9-9b1a-f1fbdef889af	GET	undefined	/states/Ks
+20240506	18:52:03	3ec0d83d-d624-4af5-81f5-939e8455c6a6	GET	undefined	/states/KS
+20240506	18:53:02	af6c4b9f-0532-4943-92e0-b48a25431af5	GET	undefined	/states/Ks
+20240506	18:54:14	a8d9e16a-d37a-41ea-9af1-982fee27c94e	GET	undefined	/states/Ks
+20240506	18:56:10	005d1b1e-6deb-4630-8fe9-249fd62f46f6	GET	undefined	/states/Ks
+20240506	18:56:14	19b97822-9f77-4965-b0be-93bd41466bd4	GET	undefined	/states/Ks
+20240506	18:56:15	c5399673-5ca6-43e5-996a-09da2904d1e8	GET	undefined	/states/Ks
+20240506	19:00:06	9f4c86b4-cbf8-4f09-9be1-0eda363afaec	GET	undefined	/states/Ks

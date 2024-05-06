@@ -52,7 +52,7 @@ const readFunFact = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
 
   try {
@@ -73,7 +73,7 @@ const readFunFact = async (req, res) => {
 }
 
 const createFunFact = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if(!state){
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -81,7 +81,7 @@ const createFunFact = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
 
   const funfacts = req?.body?.funfacts
@@ -115,7 +115,7 @@ const createFunFact = async (req, res) => {
 }
 
 const updateFunFact = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -123,7 +123,7 @@ const updateFunFact = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
 
   const {funfact, index} = req?.body;
@@ -155,7 +155,7 @@ const updateFunFact = async (req, res) => {
 }
 
 const deleteFunFact = async (req, res) => {
-  const state = req?.params?.state;
+  const state = req?.params?.state?.toUpperCase();
   if (!state) {
     return res.status(400).json({ 'message': 'state value is required' });
   }
@@ -163,7 +163,7 @@ const deleteFunFact = async (req, res) => {
     return res.status(404).json({ 'message': 'State Code does not exist' });
   }
   if (!verifyStateCode(state)) {
-    return res.status(400).json({ 'message': 'Invalid state code' });
+    return res.status(400).json({ 'message': 'Invalid state abbreviation parameter' });
   }
 
   const { index } = req?.body;
