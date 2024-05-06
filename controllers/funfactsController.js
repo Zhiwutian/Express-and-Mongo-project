@@ -144,7 +144,8 @@ const updateFunFact = async (req, res) => {
     } else {
       const funFacts = await State.find({ stateCode: state });
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      if (!funFacts) {
+      console.log(funFacts)
+      if (!funFacts.length) {
         return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
       }
       return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
@@ -186,12 +187,8 @@ const deleteFunFact = async (req, res) => {
     } else {
       const funFacts = await State.find({ stateCode: state });
       const stateRequested = stateData.find(stateObj => stateObj.code === state);
-      if (!funFacts) {
+      if (!funFacts.length) {
         return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
-      }
-      if(!stateRequested.funfacts){
-        return res.status(404).json({ 'message': `No Fun Facts found for ${stateRequested?.state}` });
-
       }
       return res.status(404).json({ 'message': `No Fun Fact found at that index for ${stateRequested?.state}` });
     }
