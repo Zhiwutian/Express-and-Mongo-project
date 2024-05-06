@@ -16,7 +16,7 @@ const buildStateData = async () => {
     const allStateData = stateData.map((state) => {
       const funFacts = mongoStates.filter((mongoState) => mongoState.stateCode === state.code);
       if (funFacts.length) {
-        state.funFacts = funFacts[0].funfacts
+        state.funfacts = funFacts[0].funfacts
         return state;
       } else {
         return state
