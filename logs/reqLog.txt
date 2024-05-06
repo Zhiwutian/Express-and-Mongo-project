@@ -352,3 +352,8 @@
 20240506	20:22:51	eef61516-227a-4ad5-9cd2-8cbdd2d1f315	GET	undefined	/states/KS/funfact
 20240506	20:22:57	95f3b1da-9806-4676-8d95-ef4c70bcb0e7	GET	undefined	/states/Ks/funfact
 20240506	20:23:28	0a419fe0-bf91-4154-91ed-83e445c74cfe	GET	undefined	/states/Ks/funfact
+20240506	20:57:38	4abbc13a-de26-4e22-97e9-7a44b4ac494f	PATCH	undefined	/states/AK/funfact
+20240506	20:58:23	e96d13a6-d057-4a02-863d-9f730323f26d	PATCH	undefined	/states/AK/funfact
+20240506	20:58:39	c8db5184-8fb7-41f3-a0db-44d9d48936df	PATCH	undefined	/states/AK/funfact
+20240506	21:00:52	95c44f78-ba82-45e6-90dd-101a44197a35	PATCH	undefined	/states/AK/funfact
+20240506	21:01:14	bd339149-5340-4ed7-b538-b4e01b7342ac	PATCH	undefined	/states/AK/funfact
