@@ -85,6 +85,7 @@ const createFunFact = async (req, res) => {
   }
 
   const funfacts = req?.body?.funfacts
+  console.log(typeof funfacts)
   if(!Array.isArray(funfacts)){
     return res.status(400).json({ 'message': 'funFacts must be in an array' });
   }
