@@ -121,8 +121,8 @@ const getStatePopulation = async (req, res) => {
   }
   try {
     const allStateData = await buildStateData();
-    const singleState = allStateData.filter((stateVal) => stateVal.code === state)
-    res.status(200).json({ 'state': singleState[0].state, 'population': singleState[0].population });
+    const singleState = allStateData.filter((stateVal) => stateVal.code === state);
+    res.status(200).json({ 'state': singleState[0].state, 'population': singleState[0].population.toLocaleString() });
   } catch (err) {
     console.error(err);
   }
